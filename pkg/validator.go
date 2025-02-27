@@ -1,6 +1,6 @@
 package pkg
 
-import "github.com/go-playground/validator"
+import "github.com/go-playground/validator/v10"
 
 func ValidateJsonPayload(validate *validator.Validate, payload any) map[string]string {
 	if err := validate.Struct(payload); err != nil {
