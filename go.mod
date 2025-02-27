@@ -1,4 +1,4 @@
-module pkg
+module github.com/milo1150/cart-demo-pkg
 
 go 1.24.0
 
