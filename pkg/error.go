@@ -2,14 +2,12 @@ package pkg
 
 import (
 	"github.com/go-playground/validator/v10"
-	"github.com/samber/lo"
 )
 
 func TranslateErrors(errors validator.ValidationErrors) map[string]string {
 	var errorMessage = make(map[string]string)
 	for _, err := range errors {
-		key := lo.SnakeCase(err.Field())
-		errorMessage[key] = err.Tag()
+		errorMessage[err.StructNamespace()] = err.ActualTag()
 	}
 	return errorMessage
 }
